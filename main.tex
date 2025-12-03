@@ -1,0 +1,81 @@
+\documentclass{beamer}
+
+% --- PREAMBLE ---
+\usepackage[english]{babel}
+\usepackage{helvet} % HELVETICA FONT: Closer to the official logo font
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% --- THEME SETTINGS ---
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+% --- DEFINE JAIN COLORS ---
+\definecolor{jainblue}{HTML}{002255} % Slightly deeper blue
+\definecolor{jainyellow}{HTML}{FFCC00} % Brighter yellow
+\definecolor{jainblack}{HTML}{231F20}
+
+\begin{document}
+
+\begin{frame}
+    \begin{center}
+        \vspace{0.5cm}
+
+        % --- ACCURATE JAIN LOGO ---
+        \resizebox{0.8\textwidth}{!}{
+            \begin{tikzpicture}[font=\sffamily\bfseries]
+                
+                % --- 1. THE JGi EMBLEM ---
+                
+                % Blue Background Circle
+                \fill[jainblue] (0,0) circle (2.2cm);
+
+                % "J" - Adjusted to sit tighter
+                \node at (-1.3, -0.4) [text=white, scale=7] {J};
+
+                % "G" - Shifted left to touch J slightly (closer to real logo)
+                \node at (0.1, -0.4) [text=white, scale=7] {G};
+
+                % "i" - Constructed manually for perfect "dot" control
+                % The body of the i
+                \fill[white] (1.3, -1.1) rectangle (1.75, 1.1); 
+                % The Yellow Dot
+                \fill[jainyellow] (1.525, 1.7) circle (0.35cm);
+
+
+                % --- 2. THE TYPOGRAPHY (Right Side) ---
+                
+                % "JAIN" Text
+                % Anchor west ensures it starts exactly to the right of the circle
+                \node at (2.6, -0.1) [anchor=south west, text=jainblack, scale=9, inner sep=0] {JAIN};
+
+                % The Black Bar
+                % Positioned under the "J" of JAIN
+                \fill[jainblack] (2.7, -1.6) rectangle (5.2, -0.9);
+
+                % "DEEMED-TO-BE UNIVERSITY"
+                % Aligned to the right of the bar
+                \node at (5.4, -1.6) [anchor=south west, text=jainblack, scale=1.45] {DEEMED-TO-BE UNIVERSITY};
+
+            \end{tikzpicture}
+        }
+        % --- END LOGO ---
+
+        \vspace{1.2cm}
+        
+        % --- STUDENT DETAILS ---
+        {\Large \textbf{Student Details}}
+        \vspace{0.6cm}
+
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{l l}
+            \textbf{Name:}              & Thejaswini CK \\
+            \textbf{USN:}               & JUUG25BTECH27786 \\
+            \textbf{Branch \& Section:} & AIML-A \\
+        \end{tabular}
+        
+    \end{center}
+\end{frame}
+
+\end{document}
